@@ -1,0 +1,560 @@
+:root{
+    --bg-color: #111315;
+    --bg-color-main: #20293A;
+    --grey-color: #CDD5E0;
+    --subtitle-color: #98A3B6;
+    --placeholder-color: #4A5567;
+
+
+    --body-font-size: 1rem;
+    --body-small-font-size: 0.75rem;
+
+    --h3-title-font-size: 2rem;
+    --main-font-family: 'Be Vietnam Pro', sans-serif;
+
+    /* --bg-price-color: #BEE3CC;
+    --label-color: #F6C768;
+    --not-available-color: #ED735D; */
+
+}
+@import url('https://fonts.cdnfonts.com/css/be-vietnam-pro');  
+body {
+    background-color: var(--bg-color) ;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: var(--body-font-size);
+    margin: 0;
+}
+
+a,a:hover,a:after{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.h3-title {
+    margin: 0;
+    font-size: var(--h3-title-font-size);
+    font-family: var(--main-font-family);
+    font-weight: 500;
+    color: var(--grey-color);
+}
+.main-div {
+    width: 100%;
+}
+
+.container-background-image {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.content-bg-img {
+    width: 100%;
+}
+.container_logo_as_title {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+img.content_logo_as_title {
+    position: absolute;
+    bottom: 85px;
+    width: 25%;
+}
+.container-input {
+    position: relative;
+}
+.input-search {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #20293A;
+    color: var(--placeholder-color);
+    font-weight: 600;
+}
+input#search {
+    border: 0;
+    padding-left: 30px;
+}
+.icon-search {
+    position: absolute;
+    top: -40px;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: var(--placeholder-color);
+    z-index: 10;
+    width: 3%;
+    fill: var(--placeholder-color);
+}
+.input-search::placeholder{
+    color: var(--placeholder-color);
+    padding-left: 5px;
+    margin-bottom: -15px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: var(--body-small-font-sizee);
+    font-weight: 600;
+}
+.container-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--text-color);
+    background-color: var(--bg-color-main);
+    padding: 0 3rem;
+}
+
+.content-main {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 85%;
+    gap: 24px;
+}
+
+.container-main-header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.content-user-informations {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+.container-avatar {
+    width: 25%;
+    position: relative;
+    z-index: 10;
+    top: -30px;
+}
+
+img.content-avatar {
+    width: 100%;
+    border: 5px solid #20293A;
+    border-radius: 15px;
+}
+
+.container-info {
+    margin-top: 15px;
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mini-card-data{
+    align-items: center;
+    border: 1px solid #111729;
+    background-color: #111729;
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+.content-mini-card-data {
+    display: flex; /* Modifier cette ligne */
+    align-items: center; /* Ajouter cette ligne */
+    gap: 14px;
+}
+
+.content-label{
+    border-right: 1px solid darkgray;
+    padding: 0 10px 0 0;
+    color: #4A5567;
+    font-weight: 600;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.mini-card-data .content-data {
+    font-weight: 400;
+    color: var(--grey-color);
+}
+
+.mini-card-data p {
+    margin: 0;
+}
+
+
+.isActive{
+    background-color: var(--subtitle-color);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 800;
+}
+.container-subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+p.subtitle {
+    width: 100%;
+    color: var(--subtitle-color);
+    margin: 0;
+}
+
+.container-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-list-item {
+    background: linear-gradient(135deg, #111729, #1D1B48);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.content-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+}
+
+.container-desciption-repo {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+.container-moreInformations {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.container-desciption-repo {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+.container-mit-licence-number,
+.container-request-number,
+.container-likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content-mit-license,
+.content-repo,
+.description-repo,
+.content-link-data,
+.content-like-data,
+.content-update-data{
+    margin: 0;
+}
+
+p.description-repo {
+    color: var(--subtitle-color);
+}
+
+.container-label {
+    position: absolute;
+    margin: 10px 10px 0;
+    padding: 0 10px;
+    background: var(--label-color);
+    border-radius: 10px;
+}
+
+.container-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 5px 5px 0px;
+}
+
+p.content-repo {
+    color: #CDD5E0;
+    font-weight: 500;
+}
+p.content-mit-license,
+p.content-link-data,
+p.content-like-data {
+    color: #757F94;
+    font-weight: 500;
+}
+
+p.content-update-data{
+    color: #757F94;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+.container-show-more {
+    margin: 20px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-show-more p{
+    margin: 0;
+    color: var(--subtitle-color);
+    font-weight: 500;
+    cursor: pointer;
+}
+@media (min-width:768px) {
+    .main-div {
+        width: 100%;
+    }
+
+    .content-main {
+        display: flex;
+        justify-content: center;
+        align-items: inherit;
+        flex-direction: column;
+        text-align: center;
+        width: inherit;
+    }
+
+    .container-main-header {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .h3-title {
+        margin: 0;
+        font-size: var(--h3-title-font-size);
+        font-family: var(--main-font-family);
+        font-weight: 500;
+        color: var(--grey-color);
+    }
+    .main-div {
+        width: 100%;
+    }
+    
+    .container-background-image {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .content-bg-img {
+        width: 100%;
+    }
+    .container-input {
+        position: relative;
+    }
+    img.icon-search {
+        width: 2%;
+    }
+    .input-search {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: #20293A;
+        color: var(--placeholder-color);
+        font-weight: 600;
+    }
+    input#search {
+        border: 0;
+        padding-left: 30px;
+    }
+    .icon-search {
+        position: absolute;
+        top: -40px;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        color: var(--placeholder-color);
+        z-index: 10;
+        width: 3%;
+        fill: var(--placeholder-color);
+    }
+    .input-search::placeholder{
+        color: var(--placeholder-color);
+        padding-left: 5px;
+        margin-bottom: -15px;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: var(--body-small-font-sizee);
+        font-weight: 600;
+    }
+    .container-main {
+        display: flex;
+        justify-content: center;
+        color: var(--text-color);
+        background-color: var(--bg-color-main);
+        padding: 0 3rem;
+    }
+    
+    .content-user-informations {
+        display: flex;
+        justify-content: flex-start;
+        gap: 40px;
+        position: relative;
+    }
+    
+    .container-avatar {
+        width: 15%;
+    }
+    
+    img.content-avatar {
+        width: 100%;
+        border: 10px solid #20293A;
+        border-radius: 15px;
+    }
+    
+    .container-info {
+        margin-top: 15px;
+    }
+    
+    .content-info {
+        flex-direction: row;
+    }
+    
+    .mini-card-data{
+        align-items: center;
+        border: 1px solid #111729;
+        background-color: #111729;
+        border-radius: 15px;
+        padding: 15px 15px;
+    }
+    
+    .content-mini-card-data {
+        display: flex; /* Modifier cette ligne */
+        align-items: center; /* Ajouter cette ligne */
+        gap: 14px;
+    }
+    
+    .content-label{
+        border-right: 1px solid darkgray;
+        padding: 0 10px 0 0;
+        color: #4A5567;
+        font-weight: 600;
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
+    
+    .mini-card-data .content-data {
+        font-weight: 400;
+        color: var(--grey-color);
+    }
+    
+    .mini-card-data p {
+        margin: 0;
+    }
+    
+    
+    .isActive{
+        background-color: var(--subtitle-color);
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 800;
+    }
+    .container-subtitle {
+        display: flex;
+        justify-content: center;
+    }
+    
+    p.subtitle {
+        width: 100%;
+        color: var(--subtitle-color);
+        margin: 0;
+    }
+    
+    .container-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+    
+    .container-list-item {
+        width: inherit;
+        margin-bottom: inherit;
+    }
+    
+    .content-list-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .container-desciption-repo {
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .container-desciption-repo {
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .content-mit-license
+    .content-repo,
+    .description-repo,
+    .content-link-data,
+    .content-like-data,
+    .content-update-data{
+        margin: 0;
+    }
+    
+    p.description-repo {
+        color: var(--subtitle-color);
+    }
+    
+    .container-label {
+        position: absolute;
+        margin: 10px 10px 0;
+        padding: 0 10px;
+        background: var(--label-color);
+        border-radius: 10px;
+    }
+    
+    .container-details {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 5px 5px 0px;
+    }
+    
+    p.content-repo {
+        color: #CDD5E0;
+        font-weight: 500;
+    }
+    p.content-mit-license,
+    p.content-link-data,
+    p.content-like-data {
+        color: #757F94;
+        font-weight: 500;
+    }
+    
+    p.content-update-data{
+        color: #757F94;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 640px){
+    .input-search,
+    .icon-search{
+        top: -80px;
+    }
+    img.icon-search {
+        width: 3%;
+    }
+}
+
+@media screen and (max-width: 639px){
+    .input-search,
+    .icon-search{
+        top: -75px;
+    }
+}

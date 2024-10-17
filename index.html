@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/be-vietnam-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        :root{
+            --bg-color: #111315;
+            --bg-color-main: #20293A;
+            --grey-color: #CDD5E0;
+            --subtitle-color: #98A3B6;
+            --placeholder-color: #6C727F;
+
+            --bg-main-section: #1B1D1F;
+            --label-color: #6C727F;
+            --bg-input: #282B30;
+            --white-color-app: #D2D5DA;
+
+
+            --body-font-size: 1rem;
+            --body-small-font-size: 0.75rem;
+
+            --h3-title-font-size: 2rem;
+            --main-font-family: 'Be Vietnam Pro', sans-serif;
+
+        }
+        @import url('https://fonts.cdnfonts.com/css/be-vietnam-pro');  
+        body {
+            background-color: var(--bg-color) ;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: var(--body-font-size);
+            margin: 0;
+        }
+
+        a,a:hover,a:after{
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        /* HEADER MOBILE */
+        img.content-bg-img {
+            width: 100%;
+        }
+        .container_logo_as_title {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        img.content_logo_as_title {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%;
+        }
+        /* HEADER MOBILE */
+        .container_main{
+            background-color: var(--bg-main-section);
+            color: white;
+        }
+        .content_main {
+            padding: 0 20px;
+        }
+        /* INFORMATIONS MOBILE */
+        .label_font{
+            padding: 0 10px 0 0;
+            color: var(--label-color);
+            font-weight: 600;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            text-align: left;
+        }
+        .container_country_name{
+            width: 25%;
+        }
+        .content_row1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .container_found_country{
+            width: 35%;
+        }
+
+        /*INPUT */
+            .container_input{
+                width: 55%;
+                position: relative;
+            }
+            .input-search {
+                width: 95%;
+                height: 40px;
+                border: none;
+                border-radius: 10px;
+                background-color: var(--bg-input);
+                color: var(--placeholder-color);
+                font-weight: 600;
+            }
+            input#search {
+                border: 0;
+                padding-left: 25px;
+            }
+            .container_input .fa-search {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #aaa;
+            }
+            .input-search::placeholder{
+                color: var(--placeholder-color);
+                padding-left: 5px;
+                margin-bottom: -15px;
+                font-family: 'Be Vietnam Pro', sans-serif;
+                font-size: var(--body-small-font-size);
+                font-weight: 600;
+            }
+        /*INPUT*/
+            .container_informations{
+                margin: 15px 0 30px 0;
+            }
+            .content_input_row_2 {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .content_informations {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            select#info_pop {
+                height: 40px;
+                background-color: transparent;
+                color: #D2D5DA;
+                font-weight: 700;
+                border-radius: 10px;
+                padding: 0 10px;
+            }
+            .content_select_region {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container_regions {
+                display: flex;
+                flex-direction: row;
+                overflow-x: scroll;
+                gap: 10px;
+                width: 100%;
+            }
+            .content_region{
+                background-color: transparent;
+                color: var(--placeholder-color);
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .isClicked{
+                background-color: var(--bg-input);
+                padding: 10px 20px;
+                border-radius: 25px;
+                color: var(--white-color-app);
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .content_checkbox {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .custom-checkbox .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: transparent;
+                border: 2px solid #6C727F;
+                border-radius: 3px;
+            }
+
+            .custom-checkbox input:checked ~ .checkmark {
+                background-color: transparent;
+                border-color: #6C727F;
+            }
+
+            .custom-checkbox .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            .custom-checkbox input:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            .custom-checkbox .checkmark:after {
+                left: 7px;
+                top: 3px;
+                width: 6px;
+                height: 12px;
+                border: solid #6C727F;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+            .container_checkbox{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .checkbox-label{ 
+                font-family: 'Be Vietnam Pro', sans-serif;
+                font-size: 14px;
+            }
+            /* INFORMATIONS MOBILE */
+
+            /* TABLE MOBILE*/
+            .container_table_countries{
+                margin: 20px 0;
+                border-spacing: 1em;
+            }
+            .table_country{
+                width: 100%;
+                border-spacing: 10px;
+            }
+            .container_img_flag{
+                display: flex;
+            }
+            .content_flag_img {
+                width: 100%;
+            }
+            .flag_img{
+                object-fit: contain;
+                width: 50px;
+                border-radius: 10px;
+                /* max-width: 120px; */
+                height: 100%;
+                cursor: pointer;
+            }
+            .label_region,
+            .region_name{
+                display: none;
+            }
+            /* TABLE MOBILE*/
+        @media (min-width: 768px){
+            img.content_logo_as_title{
+                top: -45px;
+            }
+            .table_country{
+                border-spacing: 0;
+            }
+            .container_row2{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .container_informations{
+                width: 30%;
+            }
+            .container_country_name{
+                width: 25%;
+            }
+            .content_flag_img{
+                width: 60%;
+            }
+            .flag_img {
+                width: 100%;
+                height: 60px;
+                object-fit: contain;
+                border-radius: 10px;
+                max-width: 100px;
+            }
+            .label_flag{
+                width: 15%;
+            }
+            .container_table_countries{
+                margin: 0 15px;
+                margin-top: 15px;
+                width: 65%;
+            }
+            .content_region, .isClicked{
+                width: max-content;
+            }
+            .container_regions{
+                display: flex;
+                flex-wrap: wrap;
+                overflow-x: hidden;
+            }
+            .label_region,
+            .region_name{
+                display: table-cell;
+            }
+        }
+    </style>
+
+    <div id="app">
+        <div class="container-background-image">
+            <img src="./images/hero-image-wr.jpg" alt="" class="content-bg-img">
+            <div class="container_logo_as_title">
+                <img src="./images/Logo.svg" alt="" class="content_logo_as_title">
+            </div>
+        </div>
+        <div class="container_main">
+            <div class="content_main">
+                <div class="container_row1">
+                    <div class="content_row1">
+                        <div class="container_found_country">
+                            <div v-if="filteredCountries.length > 1">
+                                <div class="content_found_country label_font">
+                                    Found {{filteredCountries.length}} countries
+                                </div>
+                            <div v-else>
+                                <div class="content_found_country label_font">
+                                    Found {{filteredCountries.length}} country
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="container_input">
+                            <img src="./images/Search.svg" alt="Icon Search" class="fa-search">
+                            <input type="text" placeholder="Search by Name, Region, Subregion" class="input-search" id="search" v-model="searchInputUsername">
+                        </div>
+                    </div>
+                </div>
+                <div class="container_row2">
+                    <div class="container_informations">
+                        <div class="content_informations">
+                            <div class="content_input_row_2 content_info_pop">
+                                <label for="input_pop" class="label_font">Sort by</label>
+                                <select name="info_pop" id="info_pop" v-model="sortBy">
+                                    <option value="Population">Population</option>
+                                    <option value="Area">Area</option>
+                                    <option value="Name">Name</option>
+                                </select>
+                            </div>
+                            <div class="content_select_region">
+                                <span class="label_font">Region</span>
+                                <div class="container_regions">
+                                    <div v-for="(region, index) in regions" :key="region.id" 
+                                            :class="['content_region', { isClicked: region.clicked }]" 
+                                            @click="handleRegionClick(region)">
+                                        {{ region.name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_status_info">
+                                <div class="content_checkbox">
+                                    <span class="label_font">Status</span>
+                                    <div class="container_checkbox">
+                                        <input type="checkbox" name="United Nation Member" id="united_nations_member" v-model="isUNMemberChecked">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Member of the United Nations</span>
+                                    </div>
+    
+                                    <div class="container_checkbox">
+                                        <input type="checkbox" name="Independent" id="independent" v-model="isIndependentChecked">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">Independent</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container_table_countries">
+                        <table class="table_country">
+                            <thead>
+                                <tr>
+                                    <th class="label_font label_flag">Flag</th>
+                                    <th class="label_font">Name</th>
+                                    <th class="label_font">Population</th>
+                                    <th class="label_font">Area (km<sup>2</sup>)</th>
+                                    <th class="label_font label_region">Region</th>
+                                    <!-- <th class="label_font label_languages">Languages</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(country, index) in filteredCountries" :key="index" class="country-item" @click="goToCountryDetail(country.cca2)">
+                                    <td class="container_img_flag">
+                                        <div class="content_flag_img">
+                                            <img 
+                                                v-if="country.flags && country.flags.png" 
+                                                :src="country.flags.svg" 
+                                                :alt="country.name.common + ' flag'" class="flag_img"/>
+                                        </div>
+                                    </td>
+                                    <td class="container_country_name">{{country.name.common}}</td>
+                                    <td>{{country.population}}</td>
+                                    <td>{{country.area}}</td>
+                                    <td class="region_name">{{country.region}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="application/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                sortBy: 'Population', // Par défaut
+                
+                allDataCountry: [],
+                defaultUserRepoList: [],
+
+                searchedUserData: [],
+                userRepoList: [],
+                searchInputUsername: '',
+
+                // Variables pour les checkboxes
+                isIndependentChecked: false, // Indépendant
+                isUNMemberChecked: false,     // Membre des Nations Unies
+                selectedRegions: [],
+                clickedRegion: null, // Stocke l'index ou l'identifiant de la région cliquée
+                regions: [
+                    { id: '1', name: 'Americas', clicked: false },
+                    { id: '2', name: 'Antarctic', clicked: false },
+                    { id: '3', name: 'Africa', clicked: false },
+                    { id: '4', name: 'Asia', clicked: false },
+                    { id: '5', name: 'Europe', clicked: false },
+                    { id: '6', name: 'Oceania', clicked: false },
+                    // autres régions...
+                ],
+                
+                countryNumber: 0,
+            },
+            created() {
+                this.getAllDataCountry();  // Appelez la méthode pour récupérer les données JSON lors de la création du composant
+            },
+            computed: {
+                filteredCountries() {
+                    let filtered = this.allDataCountry;
+
+                    // Filtrer selon la recherche par nom
+                    if (this.searchInputUsername !== '') {
+                        filtered = filtered.filter(country => 
+                            country.name.common.toLowerCase().includes(this.searchInputUsername.toLowerCase())
+                        );
+                    }
+
+                    // Filtrage par indépendance
+                    if (this.isIndependentChecked) {
+                        filtered = filtered.filter(country => country.independent === true);
+                    }
+
+                    // Filtrage par statut de membre des Nations Unies
+                    if (this.isUNMemberChecked) {
+                        filtered = filtered.filter(country => country.unMember === true);
+                    }
+
+                    // Filtrage par région (correction)
+                    if (this.selectedRegions.length > 0) {
+                        // console.log(this.selectedRegions);
+                        filtered = filtered.filter(country => this.selectedRegions.includes(country.region));
+                    }
+
+                    // Tri selon la sélection
+                    if (this.sortBy === 'Population') {
+                        filtered.sort((a, b) => b.population - a.population);
+                    } else if (this.sortBy === 'Area') {
+                        filtered.sort((a, b) => b.area - a.area);
+                    } else if (this.sortBy === 'Name') {
+                        filtered.sort((a, b) => a.name.common.localeCompare(b.name.common));
+                    }
+                    return filtered; // Renvoie la liste filtrée
+
+                }
+            },
+            methods: {
+                getAllDataCountry() {
+                    fetch('https://restcountries.com/v3.1/all')
+                        .then(response => response.json())
+                        .then(dataCountry => {
+                            this.allDataCountry = dataCountry;
+                            this.countryNumber = dataCountry.length;
+                            console.log(dataCountry);
+                        })
+                        .catch(error => {
+                            console.error('Error fetching data:', error);
+                        });
+                },
+                handleCheckboxChange() {
+                    // This method will be called when the checkbox state changes
+                    console.log("Checkbox state changed. Checked:", this.isChecked);
+                },
+                goToCountryDetail(cca2) {
+                    // Redirection vers la page de détails avec le code du pays dans l'URL
+                    window.location.href = `country_detail.html?code=${cca2}`;
+                },
+                handleRegionClick(region) {
+                    region.clicked = !region.clicked;  // Bascule l'état de la région
+
+                    if (region.clicked) {
+                        // Ajouter la région à `selectedRegions` si cliquée
+                        if (!this.selectedRegions.includes(region.name)) {
+                            this.selectedRegions.push(region.name);
+                        }
+                    } else {
+                        // Retirer la région si décochée
+                        const index = this.selectedRegions.indexOf(region.name);
+                        if (index > -1) {
+                            this.selectedRegions.splice(index, 1);
+                        }
+                    }
+                },
+            }
+        });
+    </script>
+</body>
+</html>
