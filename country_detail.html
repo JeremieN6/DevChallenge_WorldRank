@@ -324,8 +324,10 @@
             }
             .container_language_name{
                 display: flex;
-                justify-content: flex-end;
                 text-align: right;
+            }
+            .flex-end{
+                justify-content: flex-end;
             }
             .language_name{
                 width: 90%;
@@ -577,14 +579,14 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="container_language row_detail">
+                                            <div class="container_language">
                                                 <div class="content_language content_row_detail">
                                                     <div class="container_label_language">
                                                         <p class="label_detail_country label_language">
                                                             Language
                                                         </p>
                                                     </div>
-                                                    <div class="container_language_name">
+                                                    <div :class="['container_language_name', 'row_detail', { 'flex-end': countryLanguagesCount > 2 }]">
                                                         <p class="language_name data">
                                                             {{ Object.values(countryDetails.languages).join(', ') }}
                                                         </p>
@@ -724,7 +726,12 @@
                     }
                     return filtered; // Renvoie la liste filtrée
 
+                },
+                // Compter le nombre de langues
+                countryLanguagesCount() {
+                    return Object.keys(this.countryDetails.languages).length;
                 }
+            
             },
             methods: {
                 getAllDataCountry() {
