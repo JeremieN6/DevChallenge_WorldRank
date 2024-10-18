@@ -586,7 +586,7 @@
                                                             Language
                                                         </p>
                                                     </div>
-                                                    <div :class="['container_language_name', 'row_detail', { 'flex-end': countryLanguagesCount > 2 }]">
+                                                    <div :class="['container_language_name', 'row_detail', { 'flex-end': countryLanguagesCount >= 2 }]">
                                                         <p class="language_name data">
                                                             {{ Object.values(countryDetails.languages).join(', ') }}
                                                         </p>
